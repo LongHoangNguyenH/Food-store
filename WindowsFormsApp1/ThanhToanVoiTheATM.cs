@@ -17,13 +17,23 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
 
+            string donhang = "";
+            foreach (Food_DATA_Item item in FoodItem.listfood)
+            {
+                donhang += "\n\nTên món: " + item.name + "\nSố lượng: " + item.num_order + "\nĐơn giá: " + item.price + "\nTổng: " + item.total + "\n";
+            }
+            lbl_TongSoTien.Text = String.Format("{0:#,##0}", Report_review.tongthanhtien) + " VNĐ";
+            string NoiDung = "Bạn đã thanh toán đơn hàng Gồm:\n" +
+                donhang +
+                "\nTổng số tiền là " + lbl_TongSoTien.Text + " VNĐ";
 
-            lbl_TongSoTien.Text = Report_review.tongthanhtien.ToString() + "VNĐ";
-            string NoiDung = "Bạn đã thanh toán đơn hàng với số tiền là " + lbl_TongSoTien.Text;
+
+            lbl_TongSoTien.Text = String.Format("{0:#,##0}", Report_review.tongthanhtien) + " VNĐ";
+
             QRCodeGenerator QR = new QRCodeGenerator();
             QRCodeData data = QR.CreateQrCode(NoiDung, QRCodeGenerator.ECCLevel.Q);
             QRCode code = new QRCode(data);
-            pic_QR_code.Image = code.GetGraphic(6);
+            pic_QR_code.Image = code.GetGraphic(3);
         }
 
 

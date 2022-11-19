@@ -84,20 +84,20 @@
             // 
             // lbl_TongSoTien
             // 
-            this.lbl_TongSoTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TongSoTien.ForeColor = System.Drawing.Color.White;
-            this.lbl_TongSoTien.Location = new System.Drawing.Point(55, 67);
+            this.lbl_TongSoTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_TongSoTien.ForeColor = System.Drawing.Color.Yellow;
+            this.lbl_TongSoTien.Location = new System.Drawing.Point(3, 67);
             this.lbl_TongSoTien.Name = "lbl_TongSoTien";
-            this.lbl_TongSoTien.Size = new System.Drawing.Size(106, 30);
+            this.lbl_TongSoTien.Size = new System.Drawing.Size(242, 30);
             this.lbl_TongSoTien.TabIndex = 1;
             this.lbl_TongSoTien.Text = "0";
             this.lbl_TongSoTien.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(55, 37);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Yellow;
+            this.label1.Location = new System.Drawing.Point(78, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(106, 30);
             this.label1.TabIndex = 1;
@@ -125,7 +125,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DeepPink;
-            this.label4.Location = new System.Drawing.Point(351, 51);
+            this.label4.Location = new System.Drawing.Point(354, 37);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(211, 25);
             this.label4.TabIndex = 2;
@@ -135,7 +135,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(307, 409);
+            this.label5.Location = new System.Drawing.Point(311, 426);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(310, 25);
             this.label5.TabIndex = 2;
@@ -143,9 +143,10 @@
             // 
             // pic_QR_code
             // 
-            this.pic_QR_code.Location = new System.Drawing.Point(303, 98);
+            this.pic_QR_code.Location = new System.Drawing.Point(277, 79);
             this.pic_QR_code.Name = "pic_QR_code";
-            this.pic_QR_code.Size = new System.Drawing.Size(324, 286);
+            this.pic_QR_code.Size = new System.Drawing.Size(381, 344);
+            this.pic_QR_code.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic_QR_code.TabIndex = 0;
             this.pic_QR_code.TabStop = false;
             // 

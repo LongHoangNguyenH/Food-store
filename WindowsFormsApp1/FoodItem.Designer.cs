@@ -36,7 +36,6 @@
             this.lbl_Type = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.btn_minus = new System.Windows.Forms.Button();
             this.btn_add = new System.Windows.Forms.Button();
             this.pic_food = new System.Windows.Forms.PictureBox();
@@ -134,18 +133,6 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Name:";
             // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(121, 308);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 19);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "VNĐ";
-            this.label4.Click += new System.EventHandler(this.lbl_Prices_Click);
-            // 
             // btn_minus
             // 
             this.btn_minus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -190,7 +177,6 @@
             this.Controls.Add(this.btn_minus);
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.lbl_Prices);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_FoodID);
@@ -218,6 +204,5 @@
         public System.Windows.Forms.Label lbl_Type;
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.Label label3;
-        public System.Windows.Forms.Label label4;
     }
 }

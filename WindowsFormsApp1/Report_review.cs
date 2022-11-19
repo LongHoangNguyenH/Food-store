@@ -21,7 +21,7 @@ namespace WindowsFormsApp1
             string id_kh_string = string.Format("{0:00000000}", DanhMuc.id_kh);
             id_kh_string = "KH" + id_kh_string;
 
-            SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-JMN4VSF\SQLEXPRESS;Initial Catalog=FOODS;Integrated Security=True");
+            SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-JMN4VSF\SQLEXPRESS;Initial Catalog=FOOD_ORDER;Integrated Security=True");
             SqlCommand cmd = new SqlCommand("SELECT *FROM FOOD_ORDERED WHERE MAKH = ('"+id_kh_string+"')" , conn);
             SqlDataAdapter d = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -59,8 +59,8 @@ namespace WindowsFormsApp1
             Microsoft.Reporting.WinForms.ReportParameter[] para = new Microsoft.Reporting.WinForms.ReportParameter[] {
 
                 new Microsoft.Reporting.WinForms.ReportParameter("Discount", discount_convert+"%"),
-                new Microsoft.Reporting.WinForms.ReportParameter("TongThanhTien", String.Format("{0:#,##0}",tongthanhtien_convert)+" VNĐ"),
-                new Microsoft.Reporting.WinForms.ReportParameter("ChiPhi", String.Format("{0:#,##0}",chiphi_convert)+" VNĐ"),
+                new Microsoft.Reporting.WinForms.ReportParameter("TongThanhTien", String.Format("{0:#,##0}",int.Parse(tongthanhtien_convert))+" VNĐ"),
+                new Microsoft.Reporting.WinForms.ReportParameter("ChiPhi", String.Format("{0:#,##0}",int.Parse(chiphi_convert))+" VNĐ"),
             };
             this.reportViewer1.LocalReport.SetParameters(para);
             this.reportViewer1.RefreshReport();
@@ -95,14 +95,7 @@ namespace WindowsFormsApp1
         {
             btn_Oke.BackColor = Color.White;
         }
-        private void btn_back_MouseMove(object sender, MouseEventArgs e)
-        {
-            btn_back.BackColor = Color.Khaki;
-        }
-        private void btn_back_MouseLeave(object sender, EventArgs e)
-        {
-            btn_back.BackColor= Color.White;
-        }
+
         private void btn_back_Click(object sender, EventArgs e)
         {
             this.Close();

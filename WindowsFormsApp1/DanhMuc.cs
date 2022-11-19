@@ -83,6 +83,8 @@ namespace WindowsFormsApp1
             if (d == DialogResult.Yes)
             {
                 flowLayoutPanel_Porfolio.Controls.Clear();
+                ManHinhChinh.Amount_Total_Price.Show();
+                this.Close();
             }
         }
         private void btn_ThanhToan_Click(object sender, EventArgs e)
@@ -110,17 +112,28 @@ namespace WindowsFormsApp1
                 else
                 {
 
-                    SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-JMN4VSF\SQLEXPRESS;Initial Catalog=FOODS;Integrated Security=True");
-                    SqlCommand cmd = null;
-                    con.Open();
+                    SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-JMN4VSF\SQLEXPRESS;Initial Catalog=FOOD_ORDER;Integrated Security=True");
+                    SqlDataAdapter cmd = new SqlDataAdapter();
+
                     foreach (Food_DATA_Item item in FoodItem.listfood)
                     {
-                        cmd = new SqlCommand("INSERT INTO FOOD_ORDERED(MAKH, F_ID,F_NAME" +
-                            ",F_NUM_ORDER,F_PRICES,F_TYPE,F_GHICHU) VALUES ('"+txt_MaKH.Text+"','" + item.id + "',N'" + item.name + "','" + item.num_order + "','" + item.price + "','" + item.type + "',N'"+txt_GhiChu.Text+"')", con);
-                        int i = cmd.ExecuteNonQuery();
+                        con.Open();
+                        //cmd = new SqlCommand("INSERT INTO FOOD_ORDERED(MAKH, F_ID,F_NAME" +
+                        //    ",F_NUM_ORDER,F_PRICES,F_TYPE,F_GHICHU) VALUES ('"+txt_MaKH.Text+"','" + item.id + "',N'" + item.name + "','" + item.num_order + "','" + item.price + "','" + item.type + "',N'"+txt_GhiChu.Text+"')", con);
+                        //cmd = new SqlCommand(@"INSERT INTO FOOD_ORDERED(MAKH, F_ID,F_NAME,F_NUM_ORDER,F_PRICES,F_TYPE,F_GHICHU) VALUES (@MAKH,@ID,@NAME,@NUM_ORDER,@PRICE,@TYPE,@GHICHU)");
+                        cmd.InsertCommand = new SqlCommand("INSERT INTO FOOD_ORDERED(MAKH, F_ID, F_NAME, F_NUM_ORDER, F_PRICES, F_TYPE, F_GHICHU) VALUES(@MAKH, @ID, @NAME, @NUM_ORDER, @PRICE, @TYPE, @GHICHU)");
+                        cmd.InsertCommand.Connection = con;
+                        cmd.InsertCommand.Parameters.AddWithValue("@MAKH", txt_MaKH.Text);
+                        cmd.InsertCommand.Parameters.AddWithValue("@ID", item.id);
+                        cmd.InsertCommand.Parameters.AddWithValue("@NAME",  item.name);
+                        cmd.InsertCommand.Parameters.AddWithValue("@NUM_ORDER", item.num_order);
+                        cmd.InsertCommand.Parameters.AddWithValue("@PRICE", item.price);
+                        cmd.InsertCommand.Parameters.AddWithValue("@TYPE", item.price);
+                        cmd.InsertCommand.Parameters.AddWithValue("@GHICHU", txt_GhiChu.Text);
+
+                        cmd.InsertCommand.ExecuteNonQuery();
+                        con.Close();
                     }
-                   
-                    con.Close();
                     this.Hide();
                     Report_review RR = new Report_review();
                     RR.ShowDialog();
@@ -135,9 +148,9 @@ namespace WindowsFormsApp1
             lbl_TongTien.Visible = true;
             labell1.Visible = true;
             labell2.Visible = true;
+
             lbl_TongSoMon.Text = ManHinhChinh.Amount_Total_Price.lbl_TongSoMon.Text;
             lbl_TongTien.Text = ManHinhChinh.Amount_Total_Price.lbl_TongTien.Text;
-
 
             this.Close();
         }

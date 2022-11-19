@@ -39,7 +39,7 @@
             this.lbl_TongTien.AutoSize = true;
             this.lbl_TongTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_TongTien.ForeColor = System.Drawing.Color.Maroon;
-            this.lbl_TongTien.Location = new System.Drawing.Point(145, 37);
+            this.lbl_TongTien.Location = new System.Drawing.Point(131, 27);
             this.lbl_TongTien.Name = "lbl_TongTien";
             this.lbl_TongTien.Size = new System.Drawing.Size(19, 20);
             this.lbl_TongTien.TabIndex = 4;
@@ -72,7 +72,7 @@
             this.labell2.AutoSize = true;
             this.labell2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labell2.ForeColor = System.Drawing.Color.Maroon;
-            this.labell2.Location = new System.Drawing.Point(13, 37);
+            this.labell2.Location = new System.Drawing.Point(13, 27);
             this.labell2.Name = "labell2";
             this.labell2.Size = new System.Drawing.Size(93, 20);
             this.labell2.TabIndex = 7;

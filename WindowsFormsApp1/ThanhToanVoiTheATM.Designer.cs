@@ -144,20 +144,20 @@
             // lbl_TongSoTien
             // 
             this.lbl_TongSoTien.AutoSize = true;
-            this.lbl_TongSoTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TongSoTien.Location = new System.Drawing.Point(133, 26);
+            this.lbl_TongSoTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_TongSoTien.Location = new System.Drawing.Point(121, 26);
             this.lbl_TongSoTien.Name = "lbl_TongSoTien";
-            this.lbl_TongSoTien.Size = new System.Drawing.Size(20, 22);
+            this.lbl_TongSoTien.Size = new System.Drawing.Size(20, 24);
             this.lbl_TongSoTien.TabIndex = 3;
             this.lbl_TongSoTien.Text = "0";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(29, 26);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 26);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 22);
+            this.label2.Size = new System.Drawing.Size(103, 24);
             this.label2.TabIndex = 3;
             this.label2.Text = "Tổng Tiền:";
             // 
@@ -260,9 +260,10 @@
             // 
             // pic_QR_code
             // 
-            this.pic_QR_code.Location = new System.Drawing.Point(320, 72);
+            this.pic_QR_code.Location = new System.Drawing.Point(297, 72);
             this.pic_QR_code.Name = "pic_QR_code";
-            this.pic_QR_code.Size = new System.Drawing.Size(324, 286);
+            this.pic_QR_code.Size = new System.Drawing.Size(347, 307);
+            this.pic_QR_code.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic_QR_code.TabIndex = 5;
             this.pic_QR_code.TabStop = false;
             this.pic_QR_code.Visible = false;

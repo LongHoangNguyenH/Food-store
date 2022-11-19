@@ -96,6 +96,12 @@
       <DependentUpon>FoodItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Food_DATA_Item.cs" />
+    <Compile Include="History.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="History.Designer.cs">
+      <DependentUpon>History.cs</DependentUpon>
+    </Compile>
     <Compile Include="HoaDonKhachHang.cs">
       <DependentUpon>HoaDonKhachHang.xsd</DependentUpon>
     </Compile>
@@ -165,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FoodItem.resx">
       <DependentUpon>FoodItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="History.resx">
+      <DependentUpon>History.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Label_SoMon_TongSoTiens.resx">
       <DependentUpon>Label_SoMon_TongSoTiens.cs</DependentUpon>

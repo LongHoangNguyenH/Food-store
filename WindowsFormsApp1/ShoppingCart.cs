@@ -21,14 +21,23 @@ namespace WindowsFormsApp1
         {
 
             int amount = int.Parse(this.lbl_Amount.Text);
-            int prices = int.Parse(this.lbl_Prices.Text);
+            string money = lbl_Prices.Text.Replace(" VNĐ", "");
+            money = money.Replace(",", "");
+            int prices = int.Parse(money);
             amount++;
             int total_prices = amount * prices;
             FoodItem.TongSoMon += 1;
             FoodItem.TongSoTien += prices;
+            foreach(Food_DATA_Item item in FoodItem.listfood)
+            {
+                if (lbl_ID.Text == item.id)
+                {
+                    item.num_order++;
+                }
+            }
             ManHinhChinh.Amount_Total_Price.lbl_TongTien.Text = String.Format("{0:#,##0}", FoodItem.TongSoTien) + " VNĐ";
             ManHinhChinh.Amount_Total_Price.lbl_TongSoMon.Text = String.Format("{0:#,##0}", FoodItem.TongSoMon);
-            lbl_total_prices.Text = total_prices.ToString();
+            lbl_total_prices.Text = String.Format("{0:#,##0}",total_prices) + " VNĐ";
             lbl_Amount.Text = amount.ToString();
         }
         private void btn_Minus_Click(object sender, EventArgs e)

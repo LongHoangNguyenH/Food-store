@@ -37,6 +37,7 @@ namespace WindowsFormsApp1
                 flowLayoutPanel2.Controls.Add(c);
                 c.lbl_Ten.Text = DanhMuc.GetName;
                 c.lbl_NoiDung.Text = richTextBox1.Text;
+                c.lbl_NoiDung.BackColor = Color.White;
                 richTextBox1.Text = "";
             }
         }
@@ -158,22 +159,18 @@ namespace WindowsFormsApp1
                 pic_star5.Show();
             }
         }
-
         private void btn_Thoat_MouseMove(object sender, MouseEventArgs e)
         {
             btn_Thoat.BackColor = Color.Khaki;
         }
-
         private void btn_Thoat_MouseLeave(object sender, EventArgs e)
         {
             btn_Thoat.BackColor = Color.White;
         }
-
         private void btn_ManHinhChinh_MouseMove(object sender, MouseEventArgs e)
         {
             btn_ManHinhChinh.BackColor = Color.Khaki;
         }
-
         private void btn_ManHinhChinh_MouseLeave(object sender, EventArgs e)
         {
             btn_ManHinhChinh.BackColor=Color.White;

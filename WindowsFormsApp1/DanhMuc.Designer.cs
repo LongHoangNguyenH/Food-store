@@ -46,12 +46,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.rdb_momo = new System.Windows.Forms.RadioButton();
-            this.rdb_TienMat = new System.Windows.Forms.RadioButton();
-            this.rdb_TheTinDung = new System.Windows.Forms.RadioButton();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btn_back = new System.Windows.Forms.Button();
-            this.btn_HuyDon = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel_flow = new System.Windows.Forms.Panel();
             this.btn_ThanhToan = new System.Windows.Forms.Button();
@@ -60,6 +55,11 @@
             this.lbl_TongSoMon = new System.Windows.Forms.Label();
             this.labell1 = new System.Windows.Forms.Label();
             this.labell2 = new System.Windows.Forms.Label();
+            this.rdb_momo = new System.Windows.Forms.RadioButton();
+            this.rdb_TienMat = new System.Windows.Forms.RadioButton();
+            this.rdb_TheTinDung = new System.Windows.Forms.RadioButton();
+            this.btn_back = new System.Windows.Forms.Button();
+            this.btn_HuyDon = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -83,7 +83,7 @@
             // 
             this.txt_discount.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_discount.ForeColor = System.Drawing.Color.Silver;
-            this.txt_discount.Location = new System.Drawing.Point(258, 92);
+            this.txt_discount.Location = new System.Drawing.Point(320, 94);
             this.txt_discount.Multiline = true;
             this.txt_discount.Name = "txt_discount";
             this.txt_discount.Size = new System.Drawing.Size(212, 44);
@@ -259,91 +259,9 @@
             this.panel4.Size = new System.Drawing.Size(350, 326);
             this.panel4.TabIndex = 20;
             // 
-            // rdb_momo
-            // 
-            this.rdb_momo.BackColor = System.Drawing.Color.PeachPuff;
-            this.rdb_momo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdb_momo.Image = global::WindowsFormsApp1.Properties.Resources.momo;
-            this.rdb_momo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rdb_momo.Location = new System.Drawing.Point(26, 247);
-            this.rdb_momo.Name = "rdb_momo";
-            this.rdb_momo.Size = new System.Drawing.Size(274, 62);
-            this.rdb_momo.TabIndex = 18;
-            this.rdb_momo.TabStop = true;
-            this.rdb_momo.Text = "Momo";
-            this.rdb_momo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.rdb_momo.UseVisualStyleBackColor = false;
-            this.rdb_momo.MouseLeave += new System.EventHandler(this.rdb_momo_MouseLeave);
-            this.rdb_momo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.rdb_momo_MouseMove);
-            // 
-            // rdb_TienMat
-            // 
-            this.rdb_TienMat.BackColor = System.Drawing.Color.PeachPuff;
-            this.rdb_TienMat.Checked = true;
-            this.rdb_TienMat.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdb_TienMat.Image = global::WindowsFormsApp1.Properties.Resources.cash;
-            this.rdb_TienMat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rdb_TienMat.Location = new System.Drawing.Point(26, 81);
-            this.rdb_TienMat.Name = "rdb_TienMat";
-            this.rdb_TienMat.Size = new System.Drawing.Size(274, 62);
-            this.rdb_TienMat.TabIndex = 17;
-            this.rdb_TienMat.TabStop = true;
-            this.rdb_TienMat.Text = "Tiền Mặt";
-            this.rdb_TienMat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.rdb_TienMat.UseVisualStyleBackColor = false;
-            this.rdb_TienMat.MouseLeave += new System.EventHandler(this.rdb_TienMat_MouseLeave);
-            this.rdb_TienMat.MouseMove += new System.Windows.Forms.MouseEventHandler(this.rdb_TienMat_MouseMove);
-            // 
-            // rdb_TheTinDung
-            // 
-            this.rdb_TheTinDung.BackColor = System.Drawing.Color.PeachPuff;
-            this.rdb_TheTinDung.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdb_TheTinDung.Image = global::WindowsFormsApp1.Properties.Resources.credit;
-            this.rdb_TheTinDung.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rdb_TheTinDung.Location = new System.Drawing.Point(26, 166);
-            this.rdb_TheTinDung.Name = "rdb_TheTinDung";
-            this.rdb_TheTinDung.Size = new System.Drawing.Size(274, 62);
-            this.rdb_TheTinDung.TabIndex = 18;
-            this.rdb_TheTinDung.TabStop = true;
-            this.rdb_TheTinDung.Text = "Thẻ Tín Dụng";
-            this.rdb_TheTinDung.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.rdb_TheTinDung.UseVisualStyleBackColor = false;
-            this.rdb_TheTinDung.MouseLeave += new System.EventHandler(this.rdb_TheTinDung_MouseLeave);
-            this.rdb_TheTinDung.MouseMove += new System.Windows.Forms.MouseEventHandler(this.rdb_TheTinDung_MouseMove);
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // btn_back
-            // 
-            this.btn_back.BackColor = System.Drawing.Color.LemonChiffon;
-            this.btn_back.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_back.Image = global::WindowsFormsApp1.Properties.Resources.btn_Back;
-            this.btn_back.Location = new System.Drawing.Point(11, 78);
-            this.btn_back.Name = "btn_back";
-            this.btn_back.Size = new System.Drawing.Size(83, 64);
-            this.btn_back.TabIndex = 5;
-            this.btn_back.Tag = "haha";
-            this.btn_back.UseVisualStyleBackColor = false;
-            this.btn_back.Click += new System.EventHandler(this.btn_back_Click_1);
-            this.btn_back.MouseLeave += new System.EventHandler(this.btn_back_MouseLeave);
-            this.btn_back.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btn_back_MouseMove);
-            // 
-            // btn_HuyDon
-            // 
-            this.btn_HuyDon.BackColor = System.Drawing.Color.LemonChiffon;
-            this.btn_HuyDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_HuyDon.Image = global::WindowsFormsApp1.Properties.Resources.cancelation;
-            this.btn_HuyDon.Location = new System.Drawing.Point(117, 80);
-            this.btn_HuyDon.Name = "btn_HuyDon";
-            this.btn_HuyDon.Size = new System.Drawing.Size(80, 65);
-            this.btn_HuyDon.TabIndex = 4;
-            this.btn_HuyDon.Tag = "haha";
-            this.btn_HuyDon.UseVisualStyleBackColor = false;
-            this.btn_HuyDon.Click += new System.EventHandler(this.btn_HuyDon_Click);
-            this.btn_HuyDon.MouseLeave += new System.EventHandler(this.btn_HuyDon_MouseLeave);
-            this.btn_HuyDon.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btn_HuyDon_MouseMove);
             // 
             // panel5
             // 
@@ -369,9 +287,9 @@
             this.btn_ThanhToan.BackColor = System.Drawing.Color.LemonChiffon;
             this.btn_ThanhToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ThanhToan.ForeColor = System.Drawing.Color.Maroon;
-            this.btn_ThanhToan.Location = new System.Drawing.Point(271, 3);
+            this.btn_ThanhToan.Location = new System.Drawing.Point(256, 3);
             this.btn_ThanhToan.Name = "btn_ThanhToan";
-            this.btn_ThanhToan.Size = new System.Drawing.Size(102, 140);
+            this.btn_ThanhToan.Size = new System.Drawing.Size(117, 140);
             this.btn_ThanhToan.TabIndex = 0;
             this.btn_ThanhToan.Text = "Thanh Toán";
             this.btn_ThanhToan.UseVisualStyleBackColor = false;
@@ -439,6 +357,88 @@
             this.labell2.TabIndex = 15;
             this.labell2.Text = "Tổng Tiền:";
             this.labell2.Visible = false;
+            // 
+            // rdb_momo
+            // 
+            this.rdb_momo.BackColor = System.Drawing.Color.PeachPuff;
+            this.rdb_momo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdb_momo.Image = global::WindowsFormsApp1.Properties.Resources.momo;
+            this.rdb_momo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rdb_momo.Location = new System.Drawing.Point(26, 247);
+            this.rdb_momo.Name = "rdb_momo";
+            this.rdb_momo.Size = new System.Drawing.Size(274, 62);
+            this.rdb_momo.TabIndex = 18;
+            this.rdb_momo.TabStop = true;
+            this.rdb_momo.Text = "Momo";
+            this.rdb_momo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rdb_momo.UseVisualStyleBackColor = false;
+            this.rdb_momo.MouseLeave += new System.EventHandler(this.rdb_momo_MouseLeave);
+            this.rdb_momo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.rdb_momo_MouseMove);
+            // 
+            // rdb_TienMat
+            // 
+            this.rdb_TienMat.BackColor = System.Drawing.Color.PeachPuff;
+            this.rdb_TienMat.Checked = true;
+            this.rdb_TienMat.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdb_TienMat.Image = global::WindowsFormsApp1.Properties.Resources.cash;
+            this.rdb_TienMat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rdb_TienMat.Location = new System.Drawing.Point(26, 81);
+            this.rdb_TienMat.Name = "rdb_TienMat";
+            this.rdb_TienMat.Size = new System.Drawing.Size(274, 62);
+            this.rdb_TienMat.TabIndex = 17;
+            this.rdb_TienMat.TabStop = true;
+            this.rdb_TienMat.Text = "Tiền Mặt";
+            this.rdb_TienMat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rdb_TienMat.UseVisualStyleBackColor = false;
+            this.rdb_TienMat.MouseLeave += new System.EventHandler(this.rdb_TienMat_MouseLeave);
+            this.rdb_TienMat.MouseMove += new System.Windows.Forms.MouseEventHandler(this.rdb_TienMat_MouseMove);
+            // 
+            // rdb_TheTinDung
+            // 
+            this.rdb_TheTinDung.BackColor = System.Drawing.Color.PeachPuff;
+            this.rdb_TheTinDung.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdb_TheTinDung.Image = global::WindowsFormsApp1.Properties.Resources.credit;
+            this.rdb_TheTinDung.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rdb_TheTinDung.Location = new System.Drawing.Point(26, 166);
+            this.rdb_TheTinDung.Name = "rdb_TheTinDung";
+            this.rdb_TheTinDung.Size = new System.Drawing.Size(274, 62);
+            this.rdb_TheTinDung.TabIndex = 18;
+            this.rdb_TheTinDung.TabStop = true;
+            this.rdb_TheTinDung.Text = "Thẻ Tín Dụng";
+            this.rdb_TheTinDung.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rdb_TheTinDung.UseVisualStyleBackColor = false;
+            this.rdb_TheTinDung.MouseLeave += new System.EventHandler(this.rdb_TheTinDung_MouseLeave);
+            this.rdb_TheTinDung.MouseMove += new System.Windows.Forms.MouseEventHandler(this.rdb_TheTinDung_MouseMove);
+            // 
+            // btn_back
+            // 
+            this.btn_back.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btn_back.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_back.Image = global::WindowsFormsApp1.Properties.Resources.btn_Back;
+            this.btn_back.Location = new System.Drawing.Point(2, 79);
+            this.btn_back.Name = "btn_back";
+            this.btn_back.Size = new System.Drawing.Size(150, 65);
+            this.btn_back.TabIndex = 5;
+            this.btn_back.Tag = "haha";
+            this.btn_back.UseVisualStyleBackColor = false;
+            this.btn_back.Click += new System.EventHandler(this.btn_back_Click_1);
+            this.btn_back.MouseLeave += new System.EventHandler(this.btn_back_MouseLeave);
+            this.btn_back.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btn_back_MouseMove);
+            // 
+            // btn_HuyDon
+            // 
+            this.btn_HuyDon.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btn_HuyDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_HuyDon.Image = global::WindowsFormsApp1.Properties.Resources.cancelation;
+            this.btn_HuyDon.Location = new System.Drawing.Point(158, 79);
+            this.btn_HuyDon.Name = "btn_HuyDon";
+            this.btn_HuyDon.Size = new System.Drawing.Size(150, 65);
+            this.btn_HuyDon.TabIndex = 4;
+            this.btn_HuyDon.Tag = "haha";
+            this.btn_HuyDon.UseVisualStyleBackColor = false;
+            this.btn_HuyDon.Click += new System.EventHandler(this.btn_HuyDon_Click);
+            this.btn_HuyDon.MouseLeave += new System.EventHandler(this.btn_HuyDon_MouseLeave);
+            this.btn_HuyDon.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btn_HuyDon_MouseMove);
             // 
             // DanhMuc
             // 

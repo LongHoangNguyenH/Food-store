@@ -31,7 +31,6 @@
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_Oke = new System.Windows.Forms.Button();
-            this.btn_back = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // reportViewer1
@@ -41,7 +40,7 @@
             this.reportViewer1.Location = new System.Drawing.Point(0, 73);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(626, 454);
+            this.reportViewer1.Size = new System.Drawing.Size(626, 478);
             this.reportViewer1.TabIndex = 0;
             // 
             // label1
@@ -57,9 +56,9 @@
             // btn_Oke
             // 
             this.btn_Oke.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Oke.Location = new System.Drawing.Point(515, 533);
+            this.btn_Oke.Location = new System.Drawing.Point(156, 557);
             this.btn_Oke.Name = "btn_Oke";
-            this.btn_Oke.Size = new System.Drawing.Size(111, 63);
+            this.btn_Oke.Size = new System.Drawing.Size(289, 47);
             this.btn_Oke.TabIndex = 1;
             this.btn_Oke.Text = "OK";
             this.btn_Oke.UseVisualStyleBackColor = true;
@@ -67,24 +66,11 @@
             this.btn_Oke.MouseLeave += new System.EventHandler(this.btn_Oke_MouseLeave);
             this.btn_Oke.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btn_Oke_MouseMove);
             // 
-            // btn_back
-            // 
-            this.btn_back.Image = global::WindowsFormsApp1.Properties.Resources.btn_Back;
-            this.btn_back.Location = new System.Drawing.Point(0, 533);
-            this.btn_back.Name = "btn_back";
-            this.btn_back.Size = new System.Drawing.Size(106, 63);
-            this.btn_back.TabIndex = 3;
-            this.btn_back.UseVisualStyleBackColor = true;
-            this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
-            this.btn_back.MouseLeave += new System.EventHandler(this.btn_back_MouseLeave);
-            this.btn_back.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btn_back_MouseMove);
-            // 
             // Report_review
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(630, 608);
-            this.Controls.Add(this.btn_back);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_Oke);
             this.Controls.Add(this.reportViewer1);
@@ -103,6 +89,5 @@
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.Button btn_Oke;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btn_back;
     }
 }

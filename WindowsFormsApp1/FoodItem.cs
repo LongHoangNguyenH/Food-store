@@ -30,7 +30,10 @@ namespace WindowsFormsApp1
             item.type = this.lbl_Type.Text;
             item.id = this.lbl_FoodID.Text;
             item.name = this.lbl_FoodName.Text;
-            item.price = int.Parse(this.lbl_Prices.Text);
+            string money = lbl_Prices.Text.Replace(" VNĐ", "");
+            money = money.Replace(",", "");
+
+            item.price = int.Parse(money);
             item.num_order = int.Parse(this.lbl_SoLuong.Text);
             if (listfood.Count == 0)
             {
@@ -92,7 +95,8 @@ namespace WindowsFormsApp1
                 index++;
             }
             ManHinhChinh.Amount_Total_Price.lbl_TongTien.Text = String.Format("{0:#,##0}", TongSoTien) + " VNĐ" ;
-            ManHinhChinh.Amount_Total_Price.lbl_TongSoMon.Text = String.Format("{0:#,##0}", TongSoMon)  ; 
+            ManHinhChinh.Amount_Total_Price.lbl_TongSoMon.Text = String.Format("{0:#,##0}", TongSoMon)  ;
+
         }
         private void lbl_SoLuong_TextChanged(object sender, EventArgs e)
         {

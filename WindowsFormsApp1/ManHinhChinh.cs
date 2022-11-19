@@ -17,16 +17,13 @@ namespace WindowsFormsApp1
         public static int tongTien = 0;
         public static int TongSoMon = 0;
         private DataTable dataTable = new DataTable();
-        static public Label_SoMon_TongSoTiens Amount_Total_Price = new Label_SoMon_TongSoTiens();
+        public static Label_SoMon_TongSoTiens Amount_Total_Price = new Label_SoMon_TongSoTiens();
         public ManHinhChinh()
         {
 
             InitializeComponent();
-            panel_label.Controls.Add(Amount_Total_Price);
-            Amount_Total_Price.SendToBack();
-            Amount_Total_Price.Visible = true;
-            Amount_Total_Price.Dock=DockStyle.Fill;
- 
+            Panel_label.Controls.Add(Amount_Total_Price);
+            Amount_Total_Price.Dock = System.Windows.Forms.DockStyle.Fill;
             Load_Food_Beverage_from_DataTable_to_UserControls();
         }
         private void PullData_to_DataTable()
@@ -55,7 +52,7 @@ namespace WindowsFormsApp1
                 item.lbl_FoodName.Text = r["FOOD_NAME"].ToString();
                 item.lbl_FoodID.Text = r["FOOD_ID"].ToString();
                 item.lbl_SoLuong.Text = r["FOOD_NUM_ORDER"].ToString();
-                item.lbl_Prices.Text = r["FOOD_PRICES"].ToString();
+                item.lbl_Prices.Text = String.Format("{0:#,##0}", r["FOOD_PRICES"]) + " VNĐ";
                 item.lbl_Type.Text = r["FOOD_TYPE"].ToString();
                 item.BackColor = Color.Crimson;
                 item.ForeColor = Color.Gold;
@@ -86,14 +83,25 @@ namespace WindowsFormsApp1
         private void btn_food_and_drinks_Click(object sender, EventArgs e)
         {
             flowLayoutPanel_Food.Controls.Clear();
-            dataTable.Clear();
-            Load_Food_Beverage_from_DataTable_to_UserControls();
+            foreach (DataRow r in dataTable.Rows)
+            {
+                FoodItem item = new FoodItem();
+                flowLayoutPanel_Food.Controls.Add(item);
+                item.pic_food.ImageLocation = r["URL_FOOD_PICTURE"].ToString();
+                item.pic_food.SizeMode = PictureBoxSizeMode.StretchImage;
+                item.pic_food.Show();
+                item.lbl_FoodName.Text = r["FOOD_NAME"].ToString();
+                item.lbl_FoodID.Text = r["FOOD_ID"].ToString();
+                item.lbl_SoLuong.Text = r["FOOD_NUM_ORDER"].ToString();
+                item.lbl_Prices.Text = r["FOOD_PRICES"].ToString();
+                item.lbl_Type.Text = r["FOOD_TYPE"].ToString();
+                item.BackColor = Color.Crimson;
+                item.ForeColor = Color.Gold;
+            }
         }
         private void btn_drink_Click(object sender, EventArgs e)
         {
-
             flowLayoutPanel_Food.Controls.Clear();
-            PullData_to_DataTable();
             foreach (DataRow r in dataTable.Rows)
             {
                 if (r["food_type"].ToString() == "BEVERAGE")
@@ -118,9 +126,7 @@ namespace WindowsFormsApp1
         }
         private void btn_food_Click(object sender, EventArgs e)
         {
-
             flowLayoutPanel_Food.Controls.Clear();
-            PullData_to_DataTable();
             foreach (DataRow r in dataTable.Rows)
             {
                 if (r["FOOD_TYPE"].ToString() == "FOOD")
@@ -142,52 +148,6 @@ namespace WindowsFormsApp1
                 }
             }
         }
-        private void txt_Search_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                if ((txt_Search.Text == "Tìm kiếm món ăn" || txt_Search.Text == ""))
-                {
-                    flowLayoutPanel_Food.Controls.Clear();
-                    foreach (DataRow r in dataTable.Rows)
-                    {
-                        FoodItem item = new FoodItem();
-                        flowLayoutPanel_Food.Controls.Add(item);
-                        item.pic_food.ImageLocation = r["URL_FOOD_PICTURE"].ToString();
-                        item.pic_food.SizeMode = PictureBoxSizeMode.StretchImage;
-                        item.pic_food.Show();
-                        item.lbl_FoodName.Text = r["FOOD_NAME"].ToString();
-                        item.lbl_FoodID.Text = r["FOOD_ID"].ToString();
-                        item.lbl_SoLuong.Text = r["FOOD_NUM_ORDER"].ToString();
-                        item.lbl_Prices.Text = r["FOOD_PRICES"].ToString();
-                        item.lbl_Type.Text = r["FOOD_TYPE"].ToString();
-                        item.BackColor = Color.Crimson;
-                        item.ForeColor = Color.Gold;
-                    }
-                }
-                else
-                {
-                    DataRow[] filteredRows = dataTable.Select("FOOD_NAME LIKE '%" + txt_Search.Text + "%'");
-                    flowLayoutPanel_Food.Controls.Clear();
-                    foreach (DataRow r in filteredRows)
-                    {
-                        FoodItem item = new FoodItem();
-                        flowLayoutPanel_Food.Controls.Add(item);
-                        item.pic_food.ImageLocation = r["URL_FOOD_PICTURE"].ToString();
-                        item.pic_food.SizeMode = PictureBoxSizeMode.StretchImage;
-                        item.pic_food.Show();
-                        item.lbl_FoodName.Text = r["FOOD_NAME"].ToString();
-                        item.lbl_FoodID.Text = r["FOOD_ID"].ToString();
-                        item.lbl_SoLuong.Text = r["FOOD_NUM_ORDER"].ToString();
-                        item.lbl_Prices.Text = r["FOOD_PRICES"].ToString();
-                        item.lbl_Type.Text = r["FOOD_TYPE"].ToString();
-                        item.BackColor = Color.Crimson;
-                        item.ForeColor = Color.Gold;
-                    }
-                }
-            }
-        }
         private void pictureBox_hotline_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://www.facebook.com/thuyentruong.hook.9");
@@ -197,12 +157,12 @@ namespace WindowsFormsApp1
             if (txt_Search.Text == "")
             {
                 txt_Search.Text = "Tìm kiếm món ăn";
-                txt_Search.BackColor = Color.Silver;
+                txt_Search.ForeColor = Color.Silver;
             }
         }
         private void txt_Search_Enter(object sender, EventArgs e)
         {
-            if(txt_Search.Text=="Tìm kiếm món ăn")
+            if (txt_Search.Text == "Tìm kiếm món ăn")
             {
                 txt_Search.Text = "";
                 txt_Search.ForeColor = Color.Black;
@@ -242,5 +202,54 @@ namespace WindowsFormsApp1
             btn_shopping_cart.BackColor = Color.White;
         }
         #endregion
+        private void txt_Search_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                if (txt_Search.Text.Length == 0)
+                {
+                    flowLayoutPanel_Food.Controls.Clear();
+                    foreach (DataRow r in dataTable.Rows)
+                    {
+                        FoodItem item = new FoodItem();
+                        flowLayoutPanel_Food.Controls.Add(item);
+                        item.pic_food.ImageLocation = r["URL_FOOD_PICTURE"].ToString();
+                        item.pic_food.SizeMode = PictureBoxSizeMode.StretchImage;
+                        item.pic_food.Show();
+                        item.lbl_FoodName.Text = r["FOOD_NAME"].ToString();
+                        item.lbl_FoodID.Text = r["FOOD_ID"].ToString();
+                        item.lbl_SoLuong.Text = r["FOOD_NUM_ORDER"].ToString();
+                        item.lbl_Prices.Text = r["FOOD_PRICES"].ToString();
+                        item.lbl_Type.Text = r["FOOD_TYPE"].ToString();
+                        item.BackColor = Color.Crimson;
+                        item.ForeColor = Color.Gold;
+                    }
+                }
+                else
+                {
+                    flowLayoutPanel_Food.Controls.Clear();
+                    DataRow[] filteredRows = new DataRow[dataTable.Rows.Count];
+                    filteredRows = dataTable.Select("FOOD_NAME LIKE '%" + txt_Search.Text + "%'");
+                    foreach (DataRow r in filteredRows)
+                    {
+                            FoodItem item = new FoodItem();
+                            flowLayoutPanel_Food.Controls.Add(item);
+                            item.pic_food.ImageLocation = r["URL_FOOD_PICTURE"].ToString();
+                            item.pic_food.SizeMode = PictureBoxSizeMode.StretchImage;
+                            item.pic_food.Show();
+                            item.lbl_FoodName.Text = r["FOOD_NAME"].ToString();
+                            item.lbl_FoodID.Text = r["FOOD_ID"].ToString();
+                            item.lbl_SoLuong.Text = r["FOOD_NUM_ORDER"].ToString();
+                            item.lbl_Prices.Text = r["FOOD_PRICES"].ToString();
+                            item.lbl_Type.Text = r["FOOD_TYPE"].ToString();
+                            item.BackColor = Color.Crimson;
+                            item.ForeColor = Color.Gold;
+                    }
+                    
+                }
+            }
+
+
+        }
     }
 }
